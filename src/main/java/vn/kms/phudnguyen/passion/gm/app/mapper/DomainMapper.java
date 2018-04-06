@@ -8,9 +8,13 @@ import vn.kms.phudnguyen.passion.gm.app.entity.Actor;
 import vn.kms.phudnguyen.passion.gm.app.entity.Category;
 import vn.kms.phudnguyen.passion.gm.app.entity.Movie;
 
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class DomainMapper {
+
+  static Random RANDOM = new Random(System.currentTimeMillis());
+
   public static MovieDTO toMovieDTO(Movie m) {
     return MovieDTO.builder()
         .id(m.getId())
@@ -50,6 +54,9 @@ public class DomainMapper {
         .id(m.getId())
         .poster(m.getPoster())
         .title(m.getTitle())
+        .category(DomainMapper.toCategoryDTO(m.getCategories().get(0)))
+        .views((long) (RANDOM.nextInt(2000) + 1))
+        .likes((long) (RANDOM.nextInt(2000) + 1))
         .build();
   }
 }

@@ -9,4 +9,7 @@ public class LiteMovieDTO {
   String id;
   String title;
   String poster;
+  CategoryDTO category;
+  Long views;
+  Long likes;
 }
