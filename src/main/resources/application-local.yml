@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: gm
+      host: localhost
+      port: 27017
+      username: gm-service
+      password: testing1
